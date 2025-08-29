@@ -35,6 +35,44 @@ public class BinaryTreesB {
             return newNode;
 
         }
+
+        public static void preOrder(Node root)
+        {
+            if(root==null)
+            {
+                return;
+            }
+            System.out.print(root.data +"-->");
+            preOrder(root.left);
+            preOrder(root.right);
+
+
+        }
+
+        public static void inOrder(Node root)
+        {
+            if(root==null)
+            {
+                return;
+            }
+
+            inOrder(root.left);
+            System.out.print(root.data+"-->");
+            inOrder(root.right);
+
+        }
+
+        public static void postOrder(Node root)
+        {
+            if(root==null)
+            {
+                return;
+            }
+            postOrder(root.left);
+            postOrder(root.right);
+            System.out.print(root.data+"-->");
+
+        }
     }
 
 
@@ -43,6 +81,18 @@ public class BinaryTreesB {
         BinaryTree tree=new BinaryTree();
         Node root=tree.buildTree(nodes);
 
-        System.out.println(root.right);
+        System.out.println(root.right.data);
+
+        System.out.println("PreOrder traversal is :");
+        BinaryTree.preOrder(root);
+        System.out.print("null");
+
+        System.out.println(" \n InOrder traversal is :");
+        BinaryTree.inOrder(root);
+        System.out.print("null");
+
+        System.out.println(" \n PostOrder traversal is :");
+        BinaryTree.postOrder(root);
+        System.out.print("null");
     }
 }
